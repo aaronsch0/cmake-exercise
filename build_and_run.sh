@@ -1,7 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
+set -e
 
+rm -rf build
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Debug ..
-make
-./main ../yamlParser/config.yml
+
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j
+
+./sse_cmake_exercise ../yamlParser/config.yml
